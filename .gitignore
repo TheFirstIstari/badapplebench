@@ -1,0 +1,11 @@
+repos/
+test_lib/
+*.o
+badodin
+arrange
+render
+build_library
+.DS_Store
+manifests_greedy/
+*.mov
+*.mp4

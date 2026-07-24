@@ -1,0 +1,71 @@
+# badapplebench configuration
+# Adding a new language = adding a [[impl]] entry
+
+[bench]
+warmup = 1
+runs = 10
+test_pages = 2000
+test_frames = 200
+test_video = "badapple.mp4"
+
+[bench.render]
+width = 7680
+height = 4320
+
+# ── C v1.0.0 (unified binary) ──
+
+[[impl]]
+lang = "c"
+label = "v1.0.0"
+git_url = "https://github.com/TheFirstIstari/BadApplestein.git"
+git_ref = "v1.0.0"
+repo_dir = "BadApplestein"
+build_cmd = "make -j"
+binary_path = "src/badapplestein"
+
+[[impl.bench_cmds]]
+stage = "arrange"
+cmd = "{binary} encode {video} /dev/null --library {lib} --max-frames {frames} --no-hw --quiet"
+
+[[impl.bench_cmds]]
+stage = "encode"
+cmd = "{binary} encode {video} {output} --library {lib} --max-frames {frames} --no-hw --quiet"
+
+# ── C v0.2.0 (standalone arrange binary) ──
+
+[[impl]]
+lang = "c"
+label = "v0.2.0"
+git_url = "https://github.com/TheFirstIstari/BadApplestein.git"
+git_ref = "v0.2.0"
+repo_dir = "BadApplestein-v0.2.0"
+build_cmd = "make arrange"
+binary_path = "arrange"
+
+[[impl.bench_cmds]]
+stage = "arrange"
+cmd = "{binary} --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests /tmp/bench_manifests --max-frames {frames}"
+
+# ── Odin dev ──
+
+[[impl]]
+lang = "odin"
+label = "dev"
+git_url = "https://github.com/TheFirstIstari/BadOdinStein.git"
+git_ref = "main"
+repo_dir = "BadOdinStein"
+build_cmd = "odin build src/ -out:badodin -o:speed"
+binary_path = "badodin"
+
+[[impl.bench_cmds]]
+stage = "arrange"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames}"
+
+[[impl.bench_cmds]]
+stage = "render"
+prepare = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames}"
+cmd = "{binary} render --manifests manifests_greedy --registry {lib}/registry.bin --output /dev/null --width {width} --height {height} --max-frames {frames}"
+
+[[impl.bench_cmds]]
+stage = "encode"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames}"

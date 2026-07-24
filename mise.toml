@@ -1,0 +1,53 @@
+# badapplebench — mise task runner
+# Run: mise run bench (full benchmark suite)
+
+[tools]
+python = "3.12"
+
+[tasks.default]
+description = "List available tasks"
+run = "mise tasks"
+
+[tasks.setup]
+description = "Clone source repos and generate test library"
+run = "bash scripts/setup_impls.sh"
+
+[tasks.build-all]
+description = "Build all implementations"
+depends = ["build-c-v1_0_0", "build-c-v0_2_0", "build-odin-dev"]
+
+[tasks.build-c-v1_0_0]
+description = "Build C v1.0.0"
+run = "bash scripts/build_impl.sh c v1.0.0"
+
+[tasks.build-c-v0_2_0]
+description = "Build C v0.2.0"
+run = "bash scripts/build_impl.sh c v0.2.0"
+
+[tasks.build-odin-dev]
+description = "Build Odin dev"
+run = "bash scripts/build_impl.sh odin dev"
+
+[tasks.bench]
+description = "Run full benchmark suite (build + benchmark all impls × stages)"
+run = "bash scripts/run_all.sh"
+
+[tasks.bench-arrange]
+description = "Benchmark arrange stage for all implementations"
+run = "bash scripts/run_all.sh arrange"
+
+[tasks.bench-render]
+description = "Benchmark render stage for all implementations"
+run = "bash scripts/run_all.sh render"
+
+[tasks.bench-encode]
+description = "Benchmark encode stage for all implementations"
+run = "bash scripts/run_all.sh encode"
+
+[tasks.gen-readme]
+description = "Regenerate README from stored results"
+run = "python3 scripts/gen_readme.py"
+
+[tasks.clean]
+description = "Remove generated artifacts (test_lib, repos)"
+run = "rm -rf test_lib/ repos/"
