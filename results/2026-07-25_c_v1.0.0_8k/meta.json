@@ -1,0 +1,9 @@
+{
+  "lang": "c",
+  "label": "v1.0.0-8k",
+  "stage": "encode",
+  "date": "2026-07-25",
+  "hostname": "frobinson-mac",
+  "git_commit": "157ae38",
+  "notes": "8K baseline with --no-hw. OpenMP parallel blitting + pthreads encode pipeline."
+}

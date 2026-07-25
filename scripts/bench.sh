@@ -77,7 +77,7 @@ else
 fi
 
 ABS_LIB="$ROOT_DIR/test_lib"
-ABS_OUTPUT="/dev/null"
+ABS_OUTPUT="/tmp/badapplebench_output"
 
 # Find the bench_cmd for this stage
 CMD_CONFIG=$(echo "$BENCH_CMDS" | python3 -c "

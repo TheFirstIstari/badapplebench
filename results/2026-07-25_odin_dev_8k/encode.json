@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "command": "./badodin render --manifests manifests_greedy --registry /Users/frobinson/dev/badapplebench/test_lib/registry.bin --output /tmp/odin_8k_bench.mov --width 7680 --height 4320 --max-frames 200",
+      "mean": 275.745,
+      "stddev": 1.47,
+      "median": 275.745,
+      "user": 274.18,
+      "system": 1.20,
+      "min": 274.71,
+      "max": 276.78,
+      "times": [274.71, 276.78],
+      "exit_codes": [0, 0]
+    }
+  ]
+}

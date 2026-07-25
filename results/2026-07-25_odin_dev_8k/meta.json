@@ -1,0 +1,9 @@
+{
+  "lang": "odin",
+  "label": "dev-8k",
+  "stage": "encode",
+  "date": "2026-07-25",
+  "hostname": "frobinson-mac",
+  "git_commit": "8da1a95",
+  "notes": "Single-threaded render, software ProRes (prores_ks). 8K baseline before parallelization."
+}
