@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
+<rect width="520" height="260" fill="white" rx="4"/>
+<text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">c/v1.0.0-8k — All Stages</text>
+<line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="204.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
+<line x1="60" y1="166.0" x2="500" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">7.8s</text>
+<line x1="60" y1="132.0" x2="500" y2="132.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">15.6s</text>
+<line x1="60" y1="98.0" x2="500" y2="98.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="102.0" text-anchor="end" font-size="10" fill="#64748b">23.4s</text>
+<line x1="60" y1="64.0" x2="500" y2="64.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="68.0" text-anchor="end" font-size="10" fill="#64748b">31.1s</text>
+<line x1="60" y1="30.0" x2="500" y2="30.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="34.0" text-anchor="end" font-size="10" fill="#64748b">38.9s</text>
+<text x="280.0" y="216" text-anchor="middle" font-size="10" fill="#475569">encode</text>
+<line x1="280.0" y1="56.252782687785384" x2="280.0" y2="56.18090976650234" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="280.0" y1="55.38405877324092" x2="280.0" y2="54.188782283348814" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="268.0" y1="56.252782687785384" x2="292.0" y2="56.252782687785384" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="268.0" y1="54.188782283348814" x2="292.0" y2="54.188782283348814" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="260.0" y="55.38405877324092" width="40" height="0.7968509932614154" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="260.0" y1="55.8306789226213" x2="300.0" y2="55.8306789226213" stroke="#2563eb" stroke-width="2"/>
+<circle cx="280.0" cy="53.925040907787434" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<circle cx="280.0" cy="45.45454545454547" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+</svg>

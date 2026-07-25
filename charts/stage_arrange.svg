@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
+<rect width="520" height="260" fill="white" rx="4"/>
+<text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Distribution: Arrange</text>
+<line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="204.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
+<line x1="60" y1="166.0" x2="500" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">1.3s</text>
+<line x1="60" y1="132.0" x2="500" y2="132.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">2.5s</text>
+<line x1="60" y1="98.0" x2="500" y2="98.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="102.0" text-anchor="end" font-size="10" fill="#64748b">3.8s</text>
+<line x1="60" y1="63.99999999999997" x2="500" y2="63.99999999999997" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="67.99999999999997" text-anchor="end" font-size="10" fill="#64748b">5.1s</text>
+<line x1="60" y1="30.0" x2="500" y2="30.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="34.0" text-anchor="end" font-size="10" fill="#64748b">6.3s</text>
+<text x="133.33333333333331" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v0.2.0</text>
+<line x1="133.33333333333331" y1="107.82498080178902" x2="133.33333333333331" y2="107.61395397319332" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="133.33333333333331" y1="106.96400925690948" x2="133.33333333333331" y2="106.32869487583345" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="121.33333333333331" y1="107.82498080178902" x2="145.33333333333331" y2="107.82498080178902" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="121.33333333333331" y1="106.32869487583345" x2="145.33333333333331" y2="106.32869487583345" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="113.33333333333331" y="106.96400925690948" width="40" height="0.6499447162838408" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="113.33333333333331" y1="107.31446905362583" x2="153.33333333333331" y2="107.31446905362583" stroke="#2563eb" stroke-width="2"/>
+<text x="280.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v1.0.0</text>
+<line x1="280.0" y1="158.8712728999584" x2="280.0" y2="158.46267174882547" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="280.0" y1="158.16833179918268" x2="280.0" y2="157.7268218747185" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="268.0" y1="158.8712728999584" x2="292.0" y2="158.8712728999584" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="268.0" y1="157.7268218747185" x2="292.0" y2="157.7268218747185" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="260.0" y="158.16833179918268" width="40" height="0.2943399496427901" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="260.0" y1="158.289499162572" x2="300.0" y2="158.289499162572" stroke="#2563eb" stroke-width="2"/>
+<circle cx="280.0" cy="157.53787742504036" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<text x="426.66666666666663" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev</text>
+<line x1="426.66666666666663" y1="50.12317455578514" x2="426.66666666666663" y2="47.634156943159525" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="426.66666666666663" y1="45.97481186807579" x2="426.66666666666663" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="414.66666666666663" y1="50.12317455578514" x2="438.66666666666663" y2="50.12317455578514" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="414.66666666666663" y1="45.45454545454547" x2="438.66666666666663" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="406.66666666666663" y="45.97481186807579" width="40" height="1.6593450750837349" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="406.66666666666663" y1="46.59471030115037" x2="446.66666666666663" y2="46.59471030115037" stroke="#2563eb" stroke-width="2"/>
+<circle cx="426.66666666666663" cy="50.25450340441253" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+</svg>

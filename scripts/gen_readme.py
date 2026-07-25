@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RESULTS_DIR = ROOT / "results"
 README = ROOT / "README.md"
+CHARTS_DIR = ROOT / "charts"
 
 MARKER_START = "<!-- BENCHMARKS_START -->"
 MARKER_END = "<!-- BENCHMARKS_END -->"
@@ -260,6 +261,14 @@ def svg_box_chart(title, labels, data_series, width=520, height=260):
     return "\n".join(svg_parts)
 
 
+def save_svg(svg_content, filename):
+    """Save SVG to charts directory and return markdown image reference."""
+    CHARTS_DIR.mkdir(parents=True, exist_ok=True)
+    svg_path = CHARTS_DIR / filename
+    svg_path.write_text(svg_content)
+    return f"![{filename.stem}]({CHARTS_DIR.name}/{filename})"
+
+
 def build_stage_charts(entries):
     """Build per-stage box plot charts — one chart per stage, all implementations."""
     latest = latest_per_combo(entries)
@@ -279,7 +288,8 @@ def build_stage_charts(entries):
         series = [("All runs", data)]
         svg = svg_box_chart(f"Distribution: {stage.capitalize()}", labels, series)
         if svg:
-            charts.append(svg)
+            ref = save_svg(svg, Path(f"stage_{stage}.svg"))
+            charts.append(ref)
 
     if not charts:
         return ""
@@ -305,7 +315,9 @@ def build_impl_charts(entries):
         series = [(f"{e['lang']}/{e['label']}", cat_data)]
         svg = svg_box_chart(f"{e['lang']}/{e['label']} — All Stages", cat_labels, series)
         if svg:
-            charts.append(svg)
+            safe_name = f"{e['lang']}_{e['label']}".replace("/", "_")
+            ref = save_svg(svg, Path(f"impl_{safe_name}.svg"))
+            charts.append(ref)
 
     if not charts:
         return ""
@@ -433,7 +445,9 @@ def build_timeline_chart(entries):
             lx += len(name) * 5.2 + 30
 
     svg_parts.append("</svg>")
-    return "\n".join(svg_parts)
+    svg_content = "\n".join(svg_parts)
+    ref = save_svg(svg_content, Path("timeline.svg"))
+    return ref + "\n"
 
 
 def build_latest_table(entries):

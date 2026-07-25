@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
+<rect width="520" height="260" fill="white" rx="4"/>
+<text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Distribution: Encode</text>
+<line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="204.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
+<line x1="60" y1="166.0" x2="500" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">60.9s</text>
+<line x1="60" y1="132.0" x2="500" y2="132.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">121.8s</text>
+<line x1="60" y1="98.00000000000001" x2="500" y2="98.00000000000001" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="102.00000000000001" text-anchor="end" font-size="10" fill="#64748b">182.7s</text>
+<line x1="60" y1="64.0" x2="500" y2="64.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="68.0" text-anchor="end" font-size="10" fill="#64748b">243.6s</text>
+<line x1="60" y1="30.00000000000003" x2="500" y2="30.00000000000003" stroke="#e2e8f0" stroke-width="1"/>
+<text x="54" y="34.00000000000003" text-anchor="end" font-size="10" fill="#64748b">304.5s</text>
+<text x="115.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v1.0.0</text>
+<line x1="115.0" y1="199.11991069946922" x2="115.0" y2="199.11708670039545" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="115.0" y1="199.09942989952307" x2="115.0" y2="199.07294469821454" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="103.0" y1="199.11991069946922" x2="127.0" y2="199.11991069946922" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="103.0" y1="199.07294469821454" x2="127.0" y2="199.07294469821454" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="95.0" y="199.09942989952307" width="40" height="0.017656800872373424" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="95.0" y1="199.10978478893313" x2="135.0" y2="199.10978478893313" stroke="#2563eb" stroke-width="2"/>
+<circle cx="115.0" cy="199.04572163644576" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<text x="225.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v1.0.0-8k</text>
+<line x1="225.0" y1="181.6188652595064" x2="225.0" y2="181.6096747800314" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="225.0" y1="181.50778045644654" x2="225.0" y2="181.35493897106926" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="213.0" y1="181.6188652595064" x2="237.0" y2="181.6188652595064" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="213.0" y1="181.35493897106926" x2="237.0" y2="181.35493897106926" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="205.0" y="181.50778045644654" width="40" height="0.10189432358487238" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="205.0" y1="181.5648903281858" x2="245.0" y2="181.5648903281858" stroke="#2563eb" stroke-width="2"/>
+<circle cx="225.0" cy="181.32121403467409" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<circle cx="225.0" cy="180.23808128848248" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<text x="335.0" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev</text>
+<line x1="335.0" y1="188.13541302539528" x2="335.0" y2="188.06836141062414" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="335.0" y1="187.9495891649942" x2="335.0" y2="187.81741789378435" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="323.0" y1="188.13541302539528" x2="347.0" y2="188.13541302539528" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="323.0" y1="187.81741789378435" x2="347.0" y2="187.81741789378435" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="315.0" y="187.9495891649942" width="40" height="0.11877224562994115" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="315.0" y1="188.01797316505332" x2="355.0" y2="188.01797316505332" stroke="#2563eb" stroke-width="2"/>
+<text x="445.0" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev-8k</text>
+<line x1="445.0" y1="46.61036990323788" x2="445.0" y2="46.61036990323788" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="445.0" y1="45.45454545454547" x2="445.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="433.0" y1="46.61036990323788" x2="457.0" y2="46.61036990323788" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="433.0" y1="45.45454545454547" x2="457.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="425.0" y="45.45454545454547" width="40" height="1.1558244486924139" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="425.0" y1="45.45454545454547" x2="465.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="2"/>
+</svg>
