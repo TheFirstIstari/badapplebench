@@ -77,7 +77,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 
 ### Performance Distribution by Stage
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Distribution: Arrange</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -117,7 +117,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <circle cx="426.66666666666663" cy="50.25450340441253" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Distribution: Render</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -141,7 +141,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <line x1="260.0" y1="50.64758724083265" x2="300.0" y2="50.64758724083265" stroke="#2563eb" stroke-width="2"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Distribution: Encode</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -191,7 +191,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 
 ### Performance Distribution by Implementation
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">c/v0.2.0 — All Stages</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -215,7 +215,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <line x1="260.0" y1="47.08094446952825" x2="300.0" y2="47.08094446952825" stroke="#2563eb" stroke-width="2"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">c/v1.0.0 — All Stages</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -248,7 +248,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <circle cx="390.0" cy="45.45454545454547" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">c/v1.0.0-8k — All Stages</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -274,7 +274,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <circle cx="280.0" cy="45.45454545454547" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">odin/dev — All Stages</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -313,7 +313,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <line x1="406.66666666666663" y1="47.998743826410504" x2="446.66666666666663" y2="47.998743826410504" stroke="#2563eb" stroke-width="2"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="260" viewBox="0 0 520 260">
 <rect width="520" height="260" fill="white" rx="4"/>
 <text x="260.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">odin/dev-8k — All Stages</text>
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -337,9 +337,9 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <line x1="260.0" y1="45.45454545454547" x2="300.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="2"/>
 </svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
 <rect width="600" height="300" fill="white" rx="4"/>
-<text x="300.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Performance Over Time</text>
+<text x="300.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Performance by Iteration</text>
 <line x1="65" y1="230.0" x2="580" y2="230.0" stroke="#e2e8f0" stroke-width="1"/>
 <text x="59" y="234.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
 <line x1="65" y1="191.0" x2="580" y2="191.0" stroke="#e2e8f0" stroke-width="1"/>
@@ -352,13 +352,21 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <text x="59" y="77.99999999999997" text-anchor="end" font-size="10" fill="#64748b">253.7s</text>
 <line x1="65" y1="35.0" x2="580" y2="35.0" stroke="#e2e8f0" stroke-width="1"/>
 <text x="59" y="39.0" text-anchor="end" font-size="10" fill="#64748b">317.1s</text>
-<text x="322.5" y="248" text-anchor="middle" font-size="10" fill="#475569">07-25</text>
+<text x="65.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#1</text>
+<line x1="65.0" y1="35" x2="65.0" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="193.75" y="248" text-anchor="middle" font-size="10" fill="#475569">#2</text>
+<line x1="193.75" y1="35" x2="193.75" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="322.5" y="248" text-anchor="middle" font-size="10" fill="#475569">#3</text>
 <line x1="322.5" y1="35" x2="322.5" y2="230" stroke="#f1f5f9" stroke-width="1"/>
-<circle cx="322.5" cy="227.87302666872466" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
-<circle cx="322.5" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<text x="451.25" y="248" text-anchor="middle" font-size="10" fill="#475569">#4</text>
+<line x1="451.25" y1="35" x2="451.25" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="580.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#5</text>
+<line x1="580.0" y1="35" x2="580.0" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<circle cx="65.0" cy="227.87302666872466" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="193.75" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
 <circle cx="322.5" cy="209.53702388880652" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
-<circle cx="322.5" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>
-<circle cx="322.5" cy="60.43478260869563" r="4" fill="#ea580c" stroke="white" stroke-width="1.5"/>
+<circle cx="451.25" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>
+<circle cx="580.0" cy="60.43478260869563" r="4" fill="#ea580c" stroke="white" stroke-width="1.5"/>
 <line x1="69" y1="274" x2="81" y2="274" stroke="#2563eb" stroke-width="2"/>
 <circle cx="75" cy="274" r="3" fill="#2563eb"/>
 <text x="85" y="278" font-size="9" fill="#475569">c/v0.2.0 (arrange)</text>

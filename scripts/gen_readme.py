@@ -219,7 +219,7 @@ def svg_box_chart(title, labels, data_series, width=520, height=260):
     box_w = min(group_w / (n_series + 1), 40)
 
     svg_parts = []
-    svg_parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">')
+    svg_parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">')
     # Background
     svg_parts.append(f'<rect width="{width}" height="{height}" fill="white" rx="4"/>')
     # Title
@@ -313,51 +313,45 @@ def build_impl_charts(entries):
 
 
 def build_timeline_chart(entries):
-    """Build a time-series line chart showing performance over time."""
+    """Build a line chart showing performance across benchmark iterations."""
     if not entries:
         return ""
 
-    # Group by (lang, label) and collect (date, mean) per stage
-    series_data = {}  # key: (lang, label, stage), value: [(date, mean)]
-    for e in entries:
-        for stage in STAGES:
-            if stage in e["stages"]:
-                key = (e["lang"], e["label"], stage)
-                if key not in series_data:
-                    series_data[key] = []
-                series_data[key].append((e["date"], e["stages"][stage]["mean"]))
-
-    if not series_data:
-        return ""
-
-    # Collect all dates and find unique ones
-    all_dates = sorted(set(d for points in series_data.values() for d, _ in points))
-    if len(all_dates) < 1:
-        return ""
+    # Collect all entries sorted by directory name (which includes date for ordering)
+    sorted_entries = sorted(entries, key=lambda e: (e["date"], e["lang"], e["label"]))
 
     # Pick the most interesting stage per combo (prefer encode, then render, then arrange)
     stage_priority = {"encode": 0, "render": 1, "arrange": 2}
-    combo_best = {}  # key: (lang, label), value: (stage, points)
-    for (lang, label, stage), points in series_data.items():
-        combo_key = (lang, label)
-        if combo_key not in combo_best or stage_priority.get(stage, 9) < stage_priority.get(combo_best[combo_key][0], 9):
-            combo_best[combo_key] = (stage, points)
+    combo_best = {}  # key: (lang, label), value: list of (iteration, mean)
 
-    # Build series: each line is one implementation
+    for iteration, e in enumerate(sorted_entries):
+        combo_key = (e["lang"], e["label"])
+        for stage in STAGES:
+            if stage in e["stages"]:
+                if combo_key not in combo_best or stage_priority.get(stage, 9) < stage_priority.get(combo_best[combo_key]["stage"], 9):
+                    combo_best[combo_key] = {"stage": stage, "points": []}
+                if combo_best[combo_key]["stage"] == stage:
+                    combo_best[combo_key]["points"].append((iteration, e["stages"][stage]["mean"]))
+
+    if not combo_best:
+        return ""
+
+    # Build chart series
     chart_series = []
-    for (lang, label), (stage, points) in sorted(combo_best.items()):
-        name = f"{lang}/{label} ({stage})"
-        # Sort by date and extract values
-        sorted_points = sorted(points, key=lambda p: p[0])
-        chart_series.append((name, sorted_points))
+    for (lang, label), info in sorted(combo_best.items()):
+        name = f"{lang}/{label} ({info['stage']})"
+        chart_series.append((name, info["points"]))
 
     if not chart_series:
         return ""
 
-    # Find y range
+    # Find ranges
     all_vals = [v for _, points in chart_series for _, v in points]
+    all_iters = [i for _, points in chart_series for i, _ in points]
     y_max = max(all_vals) * 1.15 if all_vals else 1
     y_min = 0
+    x_max = max(all_iters) if all_iters else 0
+    x_min = 0
 
     width = 600
     height = 300
@@ -370,48 +364,43 @@ def build_timeline_chart(entries):
     y_scale = plot_h / (y_max - y_min) if y_max > y_min else 1
     y_offset = margin_top + plot_h
 
-    def x(date_str):
-        """Map date string to x coordinate."""
-        idx = all_dates.index(date_str)
-        if len(all_dates) == 1:
+    def x_pos(iteration):
+        if x_max == x_min:
             return margin_left + plot_w / 2
-        return margin_left + (idx / (len(all_dates) - 1)) * plot_w
+        return margin_left + ((iteration - x_min) / (x_max - x_min)) * plot_w
 
-    def y(val):
+    def y_pos(val):
         return y_offset - val * y_scale
 
     svg_parts = []
-    svg_parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">')
+    svg_parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">')
     svg_parts.append(f'<rect width="{width}" height="{height}" fill="white" rx="4"/>')
-    svg_parts.append(f'<text x="{width / 2}" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Performance Over Time</text>')
+    svg_parts.append(f'<text x="{width / 2}" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Performance by Iteration</text>')
 
     # Y-axis grid and labels
     n_ticks = 5
     for i in range(n_ticks + 1):
         val = y_min + (y_max - y_min) * i / n_ticks
-        ty = y(val)
+        ty = y_pos(val)
         svg_parts.append(f'<line x1="{margin_left}" y1="{ty}" x2="{width - margin_right}" y2="{ty}" stroke="#e2e8f0" stroke-width="1"/>')
         svg_parts.append(f'<text x="{margin_left - 6}" y="{ty + 4}" text-anchor="end" font-size="10" fill="#64748b">{val:.1f}s</text>')
 
-    # X-axis labels (dates)
-    for date_str in all_dates:
-        dx = x(date_str)
-        short_date = date_str[5:]  # MM-DD
-        svg_parts.append(f'<text x="{dx}" y="{height - margin_bottom + 18}" text-anchor="middle" font-size="10" fill="#475569">{short_date}</text>')
+    # X-axis labels (iteration numbers)
+    for it in range(x_min, x_max + 1):
+        dx = x_pos(it)
+        svg_parts.append(f'<text x="{dx}" y="{height - margin_bottom + 18}" text-anchor="middle" font-size="10" fill="#475569">#{it + 1}</text>')
         svg_parts.append(f'<line x1="{dx}" y1="{margin_top}" x2="{dx}" y2="{y_offset}" stroke="#f1f5f9" stroke-width="1"/>')
 
     # Draw lines and points for each series
     for si, (name, points) in enumerate(chart_series):
         color = COLORS[si % len(COLORS)]
         if len(points) > 1:
-            # Draw line segments
             for i in range(len(points) - 1):
-                x1, y1_val = x(points[i][0]), y(points[i][1])
-                x2, y2_val = x(points[i + 1][0]), y(points[i + 1][1])
+                x1, y1_val = x_pos(points[i][0]), y_pos(points[i][1])
+                x2, y2_val = x_pos(points[i + 1][0]), y_pos(points[i + 1][1])
                 svg_parts.append(f'<line x1="{x1}" y1="{y1_val}" x2="{x2}" y2="{y2_val}" stroke="{color}" stroke-width="2"/>')
-        # Draw points
-        for date_str, val in points:
-            px, py = x(date_str), y(val)
+        for it, val in points:
+            px, py = x_pos(it), y_pos(val)
             svg_parts.append(f'<circle cx="{px}" cy="{py}" r="4" fill="{color}" stroke="white" stroke-width="1.5"/>')
 
     # Legend (two rows if needed)
