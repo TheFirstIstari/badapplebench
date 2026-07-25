@@ -312,6 +312,141 @@ def build_impl_charts(entries):
     return "### Performance Distribution by Implementation\n\n" + "\n\n".join(charts) + "\n"
 
 
+def build_timeline_chart(entries):
+    """Build a time-series line chart showing performance over time."""
+    if not entries:
+        return ""
+
+    # Group by (lang, label) and collect (date, mean) per stage
+    series_data = {}  # key: (lang, label, stage), value: [(date, mean)]
+    for e in entries:
+        for stage in STAGES:
+            if stage in e["stages"]:
+                key = (e["lang"], e["label"], stage)
+                if key not in series_data:
+                    series_data[key] = []
+                series_data[key].append((e["date"], e["stages"][stage]["mean"]))
+
+    if not series_data:
+        return ""
+
+    # Collect all dates and find unique ones
+    all_dates = sorted(set(d for points in series_data.values() for d, _ in points))
+    if len(all_dates) < 1:
+        return ""
+
+    # Pick the most interesting stage per combo (prefer encode, then render, then arrange)
+    stage_priority = {"encode": 0, "render": 1, "arrange": 2}
+    combo_best = {}  # key: (lang, label), value: (stage, points)
+    for (lang, label, stage), points in series_data.items():
+        combo_key = (lang, label)
+        if combo_key not in combo_best or stage_priority.get(stage, 9) < stage_priority.get(combo_best[combo_key][0], 9):
+            combo_best[combo_key] = (stage, points)
+
+    # Build series: each line is one implementation
+    chart_series = []
+    for (lang, label), (stage, points) in sorted(combo_best.items()):
+        name = f"{lang}/{label} ({stage})"
+        # Sort by date and extract values
+        sorted_points = sorted(points, key=lambda p: p[0])
+        chart_series.append((name, sorted_points))
+
+    if not chart_series:
+        return ""
+
+    # Find y range
+    all_vals = [v for _, points in chart_series for _, v in points]
+    y_max = max(all_vals) * 1.15 if all_vals else 1
+    y_min = 0
+
+    width = 600
+    height = 300
+    margin_left = 65
+    margin_right = 20
+    margin_top = 35
+    margin_bottom = 70
+    plot_w = width - margin_left - margin_right
+    plot_h = height - margin_top - margin_bottom
+    y_scale = plot_h / (y_max - y_min) if y_max > y_min else 1
+    y_offset = margin_top + plot_h
+
+    def x(date_str):
+        """Map date string to x coordinate."""
+        idx = all_dates.index(date_str)
+        if len(all_dates) == 1:
+            return margin_left + plot_w / 2
+        return margin_left + (idx / (len(all_dates) - 1)) * plot_w
+
+    def y(val):
+        return y_offset - val * y_scale
+
+    svg_parts = []
+    svg_parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">')
+    svg_parts.append(f'<rect width="{width}" height="{height}" fill="white" rx="4"/>')
+    svg_parts.append(f'<text x="{width / 2}" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Performance Over Time</text>')
+
+    # Y-axis grid and labels
+    n_ticks = 5
+    for i in range(n_ticks + 1):
+        val = y_min + (y_max - y_min) * i / n_ticks
+        ty = y(val)
+        svg_parts.append(f'<line x1="{margin_left}" y1="{ty}" x2="{width - margin_right}" y2="{ty}" stroke="#e2e8f0" stroke-width="1"/>')
+        svg_parts.append(f'<text x="{margin_left - 6}" y="{ty + 4}" text-anchor="end" font-size="10" fill="#64748b">{val:.1f}s</text>')
+
+    # X-axis labels (dates)
+    for date_str in all_dates:
+        dx = x(date_str)
+        short_date = date_str[5:]  # MM-DD
+        svg_parts.append(f'<text x="{dx}" y="{height - margin_bottom + 18}" text-anchor="middle" font-size="10" fill="#475569">{short_date}</text>')
+        svg_parts.append(f'<line x1="{dx}" y1="{margin_top}" x2="{dx}" y2="{y_offset}" stroke="#f1f5f9" stroke-width="1"/>')
+
+    # Draw lines and points for each series
+    for si, (name, points) in enumerate(chart_series):
+        color = COLORS[si % len(COLORS)]
+        if len(points) > 1:
+            # Draw line segments
+            for i in range(len(points) - 1):
+                x1, y1_val = x(points[i][0]), y(points[i][1])
+                x2, y2_val = x(points[i + 1][0]), y(points[i + 1][1])
+                svg_parts.append(f'<line x1="{x1}" y1="{y1_val}" x2="{x2}" y2="{y2_val}" stroke="{color}" stroke-width="2"/>')
+        # Draw points
+        for date_str, val in points:
+            px, py = x(date_str), y(val)
+            svg_parts.append(f'<circle cx="{px}" cy="{py}" r="4" fill="{color}" stroke="white" stroke-width="1.5"/>')
+
+    # Legend (two rows if needed)
+    ly = height - 8
+    lx = margin_left + 4
+    row_items = []
+    current_row = []
+    current_width = 0
+    max_width = plot_w
+
+    for si, (name, _) in enumerate(chart_series):
+        item_width = len(name) * 5.2 + 30
+        if current_width + item_width > max_width and current_row:
+            row_items.append(current_row)
+            current_row = []
+            current_width = 0
+        current_row.append((si, name, item_width))
+        current_width += item_width
+    if current_row:
+        row_items.append(current_row)
+
+    for ri, row in enumerate(row_items):
+        lx = margin_left + 4
+        ry = ly - (len(row_items) - 1 - ri) * 14
+        for si, name, _ in row:
+            color = COLORS[si % len(COLORS)]
+            svg_parts.append(f'<line x1="{lx}" y1="{ry - 4}" x2="{lx + 12}" y2="{ry - 4}" stroke="{color}" stroke-width="2"/>')
+            svg_parts.append(f'<circle cx="{lx + 6}" cy="{ry - 4}" r="3" fill="{color}"/>')
+            svg_parts.append(f'<text x="{lx + 16}" y="{ry}" font-size="9" fill="#475569">{name}</text>')
+            lx += len(name) * 5.2 + 30
+
+    svg_parts.append("</svg>")
+    return "\n".join(svg_parts)
+
+
 def build_latest_table(entries):
     """Build the latest benchmarks markdown table."""
     if not entries:
@@ -399,6 +534,9 @@ def main():
         parts.append(stage_charts)
     if impl_charts:
         parts.append(impl_charts)
+    timeline_chart = build_timeline_chart(entries)
+    if timeline_chart:
+        parts.append(timeline_chart)
     if history_table:
         parts.append(history_table)
 

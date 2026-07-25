@@ -337,6 +337,44 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <line x1="260.0" y1="45.45454545454547" x2="300.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="2"/>
 </svg>
 
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" style="max-width:100%;height:auto;font-family:system-ui,sans-serif">
+<rect width="600" height="300" fill="white" rx="4"/>
+<text x="300.0" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Performance Over Time</text>
+<line x1="65" y1="230.0" x2="580" y2="230.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="59" y="234.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
+<line x1="65" y1="191.0" x2="580" y2="191.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="59" y="195.0" text-anchor="end" font-size="10" fill="#64748b">63.4s</text>
+<line x1="65" y1="152.0" x2="580" y2="152.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="59" y="156.0" text-anchor="end" font-size="10" fill="#64748b">126.8s</text>
+<line x1="65" y1="112.99999999999999" x2="580" y2="112.99999999999999" stroke="#e2e8f0" stroke-width="1"/>
+<text x="59" y="116.99999999999999" text-anchor="end" font-size="10" fill="#64748b">190.3s</text>
+<line x1="65" y1="73.99999999999997" x2="580" y2="73.99999999999997" stroke="#e2e8f0" stroke-width="1"/>
+<text x="59" y="77.99999999999997" text-anchor="end" font-size="10" fill="#64748b">253.7s</text>
+<line x1="65" y1="35.0" x2="580" y2="35.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="59" y="39.0" text-anchor="end" font-size="10" fill="#64748b">317.1s</text>
+<text x="322.5" y="248" text-anchor="middle" font-size="10" fill="#475569">07-25</text>
+<line x1="322.5" y1="35" x2="322.5" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<circle cx="322.5" cy="227.87302666872466" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="322.5" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="322.5" cy="209.53702388880652" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
+<circle cx="322.5" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>
+<circle cx="322.5" cy="60.43478260869563" r="4" fill="#ea580c" stroke="white" stroke-width="1.5"/>
+<line x1="69" y1="274" x2="81" y2="274" stroke="#2563eb" stroke-width="2"/>
+<circle cx="75" cy="274" r="3" fill="#2563eb"/>
+<text x="85" y="278" font-size="9" fill="#475569">c/v0.2.0 (arrange)</text>
+<line x1="192.60000000000002" y1="274" x2="204.60000000000002" y2="274" stroke="#dc2626" stroke-width="2"/>
+<circle cx="198.60000000000002" cy="274" r="3" fill="#dc2626"/>
+<text x="208.60000000000002" y="278" font-size="9" fill="#475569">c/v1.0.0 (encode)</text>
+<line x1="311.0" y1="274" x2="323.0" y2="274" stroke="#16a34a" stroke-width="2"/>
+<circle cx="317.0" cy="274" r="3" fill="#16a34a"/>
+<text x="327.0" y="278" font-size="9" fill="#475569">c/v1.0.0-8k (encode)</text>
+<line x1="445.0" y1="274" x2="457.0" y2="274" stroke="#9333ea" stroke-width="2"/>
+<circle cx="451.0" cy="274" r="3" fill="#9333ea"/>
+<text x="461.0" y="278" font-size="9" fill="#475569">odin/dev (encode)</text>
+<line x1="69" y1="288" x2="81" y2="288" stroke="#ea580c" stroke-width="2"/>
+<circle cx="75" cy="288" r="3" fill="#ea580c"/>
+<text x="85" y="292" font-size="9" fill="#475569">odin/dev-8k (encode)</text>
+</svg>
 ### History
 
 | Date       | Language | Version | Arrange (s) | Render (s) | Encode (s) |
