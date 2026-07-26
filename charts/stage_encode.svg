@@ -30,18 +30,21 @@
 <line x1="205.0" y1="181.5648903281858" x2="245.0" y2="181.5648903281858" stroke="#2563eb" stroke-width="2"/>
 <circle cx="225.0" cy="181.32121403467409" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
 <circle cx="225.0" cy="180.23808128848248" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
-<text x="335.0" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev</text>
-<line x1="335.0" y1="188.13541302539528" x2="335.0" y2="188.06836141062414" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="335.0" y1="187.9495891649942" x2="335.0" y2="187.81741789378435" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="323.0" y1="188.13541302539528" x2="347.0" y2="188.13541302539528" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="323.0" y1="187.81741789378435" x2="347.0" y2="187.81741789378435" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="315.0" y="187.9495891649942" width="40" height="0.11877224562994115" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="315.0" y1="188.01797316505332" x2="355.0" y2="188.01797316505332" stroke="#2563eb" stroke-width="2"/>
-<text x="445.0" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev-8k</text>
-<line x1="445.0" y1="46.61036990323788" x2="445.0" y2="46.61036990323788" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="445.0" y1="45.45454545454547" x2="445.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="433.0" y1="46.61036990323788" x2="457.0" y2="46.61036990323788" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="433.0" y1="45.45454545454547" x2="457.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="425.0" y="45.45454545454547" width="40" height="1.1558244486924139" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="425.0" y1="45.45454545454547" x2="465.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="2"/>
+<text x="335.0" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev-8k</text>
+<line x1="335.0" y1="46.61036990323788" x2="335.0" y2="46.61036990323788" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="335.0" y1="45.45454545454547" x2="335.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="323.0" y1="46.61036990323788" x2="347.0" y2="46.61036990323788" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="323.0" y1="45.45454545454547" x2="347.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="315.0" y="45.45454545454547" width="40" height="1.1558244486924139" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="315.0" y1="45.45454545454547" x2="355.0" y2="45.45454545454547" stroke="#2563eb" stroke-width="2"/>
+<text x="445.0" y="216" text-anchor="middle" font-size="10" fill="#475569">zig/dev</text>
+<line x1="445.0" y1="199.98511592471212" x2="445.0" y2="199.9847892088761" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="445.0" y1="199.98424084387995" x2="445.0" y2="199.9834182963857" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="433.0" y1="199.98511592471212" x2="457.0" y2="199.98511592471212" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="433.0" y1="199.9834182963857" x2="457.0" y2="199.9834182963857" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="425.0" y="199.98424084387995" width="40" height="0.0005483649961490755" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="425.0" y1="199.98460380737572" x2="465.0" y2="199.98460380737572" stroke="#2563eb" stroke-width="2"/>
+<circle cx="445.0" cy="199.98341596938167" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<circle cx="445.0" cy="199.98319674019405" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<circle cx="445.0" cy="199.9830093140466" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
 </svg>

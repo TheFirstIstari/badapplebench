@@ -15,19 +15,24 @@
 <text x="59" y="39.0" text-anchor="end" font-size="10" fill="#64748b">317.1s</text>
 <text x="65.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#1</text>
 <line x1="65.0" y1="35" x2="65.0" y2="230" stroke="#f1f5f9" stroke-width="1"/>
-<text x="193.75" y="248" text-anchor="middle" font-size="10" fill="#475569">#2</text>
-<line x1="193.75" y1="35" x2="193.75" y2="230" stroke="#f1f5f9" stroke-width="1"/>
-<text x="322.5" y="248" text-anchor="middle" font-size="10" fill="#475569">#3</text>
+<text x="150.83333333333331" y="248" text-anchor="middle" font-size="10" fill="#475569">#2</text>
+<line x1="150.83333333333331" y1="35" x2="150.83333333333331" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="236.66666666666666" y="248" text-anchor="middle" font-size="10" fill="#475569">#3</text>
+<line x1="236.66666666666666" y1="35" x2="236.66666666666666" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="322.5" y="248" text-anchor="middle" font-size="10" fill="#475569">#4</text>
 <line x1="322.5" y1="35" x2="322.5" y2="230" stroke="#f1f5f9" stroke-width="1"/>
-<text x="451.25" y="248" text-anchor="middle" font-size="10" fill="#475569">#4</text>
-<line x1="451.25" y1="35" x2="451.25" y2="230" stroke="#f1f5f9" stroke-width="1"/>
-<text x="580.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#5</text>
+<text x="408.3333333333333" y="248" text-anchor="middle" font-size="10" fill="#475569">#5</text>
+<line x1="408.3333333333333" y1="35" x2="408.3333333333333" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="494.1666666666667" y="248" text-anchor="middle" font-size="10" fill="#475569">#6</text>
+<line x1="494.1666666666667" y1="35" x2="494.1666666666667" y2="230" stroke="#f1f5f9" stroke-width="1"/>
+<text x="580.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#7</text>
 <line x1="580.0" y1="35" x2="580.0" y2="230" stroke="#f1f5f9" stroke-width="1"/>
 <circle cx="65.0" cy="227.83419578974997" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
-<circle cx="193.75" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
-<circle cx="322.5" cy="209.53702388880652" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
-<circle cx="451.25" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>
-<circle cx="580.0" cy="60.43478260869563" r="4" fill="#ea580c" stroke="white" stroke-width="1.5"/>
+<circle cx="150.83333333333331" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="236.66666666666666" cy="209.53702388880652" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
+<circle cx="322.5" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>
+<circle cx="408.3333333333333" cy="60.43478260869563" r="4" fill="#ea580c" stroke="white" stroke-width="1.5"/>
+<circle cx="580.0" cy="229.98289641736295" r="4" fill="#0891b2" stroke="white" stroke-width="1.5"/>
 <line x1="69" y1="274" x2="81" y2="274" stroke="#2563eb" stroke-width="2"/>
 <circle cx="75" cy="274" r="3" fill="#2563eb"/>
 <text x="85" y="278" font-size="9" fill="#475569">c/v0.2.0 (arrange)</text>
@@ -43,4 +48,7 @@
 <line x1="69" y1="288" x2="81" y2="288" stroke="#ea580c" stroke-width="2"/>
 <circle cx="75" cy="288" r="3" fill="#ea580c"/>
 <text x="85" y="292" font-size="9" fill="#475569">odin/dev-8k (encode)</text>
+<line x1="203.0" y1="288" x2="215.0" y2="288" stroke="#0891b2" stroke-width="2"/>
+<circle cx="209.0" cy="288" r="3" fill="#0891b2"/>
+<text x="219.0" y="292" font-size="9" fill="#475569">zig/dev (encode)</text>
 </svg>

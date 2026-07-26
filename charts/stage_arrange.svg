@@ -4,35 +4,28 @@
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
 <text x="54" y="204.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
 <line x1="60" y1="166.0" x2="500" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">1.3s</text>
+<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">0.8s</text>
 <line x1="60" y1="132.0" x2="500" y2="132.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">2.6s</text>
+<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">1.6s</text>
 <line x1="60" y1="98.0" x2="500" y2="98.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="102.0" text-anchor="end" font-size="10" fill="#64748b">3.8s</text>
+<text x="54" y="102.0" text-anchor="end" font-size="10" fill="#64748b">2.3s</text>
 <line x1="60" y1="64.0" x2="500" y2="64.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="68.0" text-anchor="end" font-size="10" fill="#64748b">5.1s</text>
+<text x="54" y="68.0" text-anchor="end" font-size="10" fill="#64748b">3.1s</text>
 <line x1="60" y1="30.0" x2="500" y2="30.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="34.0" text-anchor="end" font-size="10" fill="#64748b">6.4s</text>
-<text x="133.33333333333331" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v0.2.0</text>
-<line x1="133.33333333333331" y1="106.97668103199516" x2="133.33333333333331" y2="106.75070971129276" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="133.33333333333331" y1="105.71697787106996" x2="133.33333333333331" y2="105.44753609396393" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="121.33333333333331" y1="106.97668103199516" x2="145.33333333333331" y2="106.97668103199516" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="121.33333333333331" y1="105.44753609396393" x2="145.33333333333331" y2="105.44753609396393" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="113.33333333333331" y="105.71697787106996" width="40" height="1.0337318402227993" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="113.33333333333331" y1="106.17736318394847" x2="153.33333333333331" y2="106.17736318394847" stroke="#2563eb" stroke-width="2"/>
-<text x="280.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v1.0.0</text>
-<line x1="280.0" y1="158.05601675304666" x2="280.0" y2="157.66951723822723" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="280.0" y1="157.08853358193065" x2="280.0" y2="156.2170580974858" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="268.0" y1="158.05601675304666" x2="292.0" y2="158.05601675304666" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="268.0" y1="156.2170580974858" x2="292.0" y2="156.2170580974858" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="260.0" y="157.08853358193065" width="40" height="0.5809836562965813" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="260.0" y1="157.33639877610995" x2="300.0" y2="157.33639877610995" stroke="#2563eb" stroke-width="2"/>
-<circle cx="280.0" cy="156.05489601015498" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
-<text x="426.66666666666663" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev</text>
-<line x1="426.66666666666663" y1="46.307646034745375" x2="426.66666666666663" y2="46.2054608754855" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="426.66666666666663" y1="45.81418357479603" x2="426.66666666666663" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="414.66666666666663" y1="46.307646034745375" x2="438.66666666666663" y2="46.307646034745375" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="414.66666666666663" y1="45.45454545454547" x2="438.66666666666663" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="406.66666666666663" y="45.81418357479603" width="40" height="0.39127730068946676" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="406.66666666666663" y1="45.868776269968464" x2="446.66666666666663" y2="45.868776269968464" stroke="#2563eb" stroke-width="2"/>
+<text x="54" y="34.0" text-anchor="end" font-size="10" fill="#64748b">3.9s</text>
+<text x="170.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v0.2.0</text>
+<line x1="170.0" y1="47.95392399796202" x2="170.0" y2="47.584575183245846" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="170.0" y1="45.89494647844438" x2="170.0" y2="45.45454545454544" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="158.0" y1="47.95392399796202" x2="182.0" y2="47.95392399796202" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="158.0" y1="45.45454545454544" x2="182.0" y2="45.45454545454544" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="150.0" y="45.89494647844438" width="40" height="1.6896287048014642" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="150.0" y1="46.64744360549514" x2="190.0" y2="46.64744360549514" stroke="#2563eb" stroke-width="2"/>
+<text x="390.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v1.0.0</text>
+<line x1="390.0" y1="131.4428023495058" x2="390.0" y2="130.8110711313883" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="390.0" y1="129.86145671060427" x2="390.0" y2="128.4370350794282" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="378.0" y1="131.4428023495058" x2="402.0" y2="131.4428023495058" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="378.0" y1="128.4370350794282" x2="402.0" y2="128.4370350794282" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="370.0" y="129.86145671060427" width="40" height="0.9496144207840302" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="370.0" y1="130.266590934695" x2="410.0" y2="130.266590934695" stroke="#2563eb" stroke-width="2"/>
+<circle cx="390.0" cy="128.1719820870336" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
 </svg>
