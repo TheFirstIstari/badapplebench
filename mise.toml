@@ -14,7 +14,7 @@ run = "bash scripts/setup_impls.sh"
 
 [tasks.build-all]
 description = "Build all implementations"
-depends = ["build-c-v1_0_0", "build-c-v0_2_0", "build-odin-dev"]
+depends = ["build-c-v1_0_0", "build-c-v0_2_0", "build-odin-dev", "build-zig-dev"]
 
 [tasks.build-c-v1_0_0]
 description = "Build C v1.0.0"
@@ -27,6 +27,10 @@ run = "bash scripts/build_impl.sh c v0.2.0"
 [tasks.build-odin-dev]
 description = "Build Odin dev"
 run = "bash scripts/build_impl.sh odin dev"
+
+[tasks.build-zig-dev]
+description = "Build Zig dev (BadZiggle)"
+run = "bash scripts/build_impl.sh zig dev"
 
 [tasks.bench]
 description = "Run full benchmark suite (build + benchmark all impls × stages)"

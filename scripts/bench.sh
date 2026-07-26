@@ -158,11 +158,21 @@ fi
 
 echo "  Results saved to $HYPERFINE_OUTPUT"
 
-# Write meta.json
+# Write meta.json (preserve existing notes/status if present)
 GIT_COMMIT=$(git -C "$ROOT_DIR/repos/$REPO_DIR" rev-parse --short HEAD 2>/dev/null || echo "unknown")
 
 python3 -c "
-import json, socket, datetime
+import json, socket, datetime, os
+
+meta_path = '$META_PATH'
+existing = {}
+if os.path.exists(meta_path):
+    try:
+        with open(meta_path) as f:
+            existing = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        pass
+
 meta = {
     'lang': '$LANG',
     'label': '$LABEL',
@@ -171,7 +181,13 @@ meta = {
     'hostname': socket.gethostname(),
     'git_commit': '$GIT_COMMIT'
 }
-with open('$META_PATH', 'w') as f:
+# Preserve notes and status from existing meta.json
+if 'notes' in existing:
+    meta['notes'] = existing['notes']
+if 'status' in existing:
+    meta['status'] = existing['status']
+
+with open(meta_path, 'w') as f:
     json.dump(meta, f, indent=2)
 "
 
