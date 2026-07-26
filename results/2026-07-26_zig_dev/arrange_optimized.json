@@ -1,0 +1,11 @@
+{
+  "lang": "zig",
+  "label": "dev_opt",
+  "stage": "arrange",
+  "date": "2026-07-26",
+  "hostname": "Finns-MacBook-Pro.local",
+  "git_commit": "52c4e9c",
+  "notes": "After 7 swarm optimizations (sorted-insertion\u2192std.sort, pre-alloc buffers, bitwise AND hash pre-sizing, thread_count on decoder, frame pool, dedup copyTilePixels). C baseline: 1.60s. Zig: ~107s \u2014 gap largely due to C SIMD intrinsics (AVX2/NEON) for feature matching/L1.",
+  "mean_seconds": 108.5,
+  "source": "manual_timing"
+}

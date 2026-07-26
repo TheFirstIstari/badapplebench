@@ -23,7 +23,7 @@
 <line x1="451.25" y1="35" x2="451.25" y2="230" stroke="#f1f5f9" stroke-width="1"/>
 <text x="580.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#5</text>
 <line x1="580.0" y1="35" x2="580.0" y2="230" stroke="#f1f5f9" stroke-width="1"/>
-<circle cx="65.0" cy="227.87302666872466" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="65.0" cy="227.83419578974997" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
 <circle cx="193.75" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
 <circle cx="322.5" cy="209.53702388880652" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
 <circle cx="451.25" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>

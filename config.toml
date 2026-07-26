@@ -72,3 +72,27 @@ cmd = "{binary} render --manifests manifests_greedy --registry {lib}/registry.bi
 [[impl.bench_cmds]]
 stage = "encode"
 cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames} && {binary} render --manifests manifests_greedy --registry {lib}/registry.bin --output {output}.mov --width {width} --height {height} --max-frames {frames}"
+
+# ── Zig dev (BadZiggle) ──
+
+[[impl]]
+lang = "zig"
+label = "dev"
+git_url = "https://github.com/TheFirstIstari/BadZiggle.git"
+git_ref = "master"
+repo_dir = "BadZiggle"
+build_cmd = "zig build"
+binary_path = "zig-out/bin/badziggle"
+
+[[impl.bench_cmds]]
+stage = "arrange"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet"
+
+[[impl.bench_cmds]]
+stage = "render"
+prepare = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet"
+cmd = "{binary} render --manifests {output} --registry {lib}/registry.bin --output {output}/output.mov --width {width} --height {height} --max-frames {frames}"
+
+[[impl.bench_cmds]]
+stage = "encode"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet && {binary} render --manifests {output} --registry {lib}/registry.bin --output {output}/output.mov --width {width} --height {height} --max-frames {frames}"

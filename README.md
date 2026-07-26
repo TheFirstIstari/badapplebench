@@ -69,10 +69,10 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 
 | Language | Version | Arrange (s) | Render (s) | Encode (s) | Git Commit |
 |----------|---------|-------------|------------|------------|------------|
-| c | v0.2.0 | 3.46 ± 0.02 | — | — | af01720 |
-| c | v1.0.0 | **1.56 ± 0.01** | — | **1.61 ± 0.04** | 157ae38 |
+| c | v0.2.0 | 3.52 ± 0.02 | — | — | af01720 |
+| c | v1.0.0 | **1.60 ± 0.02** | — | **1.61 ± 0.04** | 157ae38 |
 | c | v1.0.0-8k | — | — | 33.28 ± 0.76 | 157ae38 |
-| odin | dev | 5.70 ± 0.06 | **15.81 ± 0.25** | 21.50 ± 0.18 | 2c68846 |
+| odin | dev | 5.78 ± 0.01 | **15.81 ± 0.25** | 21.50 ± 0.18 | 2c68846 |
 | odin | dev-8k | — | — | 275.75 ± 1.47 | 8da1a95 |
 
 ### Performance Distribution by Stage
@@ -101,10 +101,10 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 
 | Date       | Language | Version | Arrange (s) | Render (s) | Encode (s) |
 |------------|----------|---------|-------------|------------|------------|
-| 2026-07-25 | c | v0.2.0 | 3.46 | — | — |
-| 2026-07-25 | c | v1.0.0 | 1.56 | — | 1.61 |
+| 2026-07-25 | c | v0.2.0 | 3.52 | — | — |
+| 2026-07-25 | c | v1.0.0 | 1.60 | — | 1.61 |
 | 2026-07-25 | c | v1.0.0-8k | — | — | 33.28 |
-| 2026-07-25 | odin | dev | 5.70 | 15.81 | 21.50 |
+| 2026-07-25 | odin | dev | 5.78 | 15.81 | 21.50 |
 | 2026-07-25 | odin | dev-8k | — | — | 275.75 |
 <!-- BENCHMARKS_END -->
 
