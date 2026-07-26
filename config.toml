@@ -1,5 +1,6 @@
 # badapplebench configuration
-# Adding a new language = adding a [[impl]] entry
+# Only the encode stage (full pipeline: arrange + render) is benchmarked.
+# This measures the total time to compute the output video.
 
 [bench]
 warmup = 1
@@ -24,27 +25,8 @@ build_cmd = "make -j"
 binary_path = "src/badapplestein"
 
 [[impl.bench_cmds]]
-stage = "arrange"
-cmd = "{binary} encode {video} {output} --library {lib} --max-frames {frames} --no-hw --quiet --keep-manifests"
-
-[[impl.bench_cmds]]
 stage = "encode"
 cmd = "{binary} encode {video} {output} --library {lib} --max-frames {frames} --no-hw --quiet"
-
-# ── C v0.2.0 (standalone arrange binary) ──
-
-[[impl]]
-lang = "c"
-label = "v0.2.0"
-git_url = "https://github.com/TheFirstIstari/BadApplestein.git"
-git_ref = "v0.2.0"
-repo_dir = "BadApplestein-v0.2.0"
-build_cmd = "mise run build-arrange"
-binary_path = "arrange"
-
-[[impl.bench_cmds]]
-stage = "arrange"
-cmd = "{binary} --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests /tmp/bench_manifests --max-frames {frames}"
 
 # ── Odin dev ──
 # NOTE: Odin binary has a pre-existing FFmpeg offset compatibility issue at runtime.
@@ -61,15 +43,6 @@ build_cmd = "mise run build"
 binary_path = "badodin"
 
 [[impl.bench_cmds]]
-stage = "arrange"
-cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames}"
-
-[[impl.bench_cmds]]
-stage = "render"
-prepare = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames}"
-cmd = "{binary} render --manifests manifests_greedy --registry {lib}/registry.bin --output {output}.mov --width {width} --height {height} --max-frames {frames}"
-
-[[impl.bench_cmds]]
 stage = "encode"
 cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames} && {binary} render --manifests manifests_greedy --registry {lib}/registry.bin --output {output}.mov --width {width} --height {height} --max-frames {frames}"
 
@@ -83,15 +56,6 @@ git_ref = "master"
 repo_dir = "BadZiggle"
 build_cmd = "zig build"
 binary_path = "zig-out/bin/badziggle"
-
-[[impl.bench_cmds]]
-stage = "arrange"
-cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet"
-
-[[impl.bench_cmds]]
-stage = "render"
-prepare = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet"
-cmd = "{binary} render --manifests {output} --registry {lib}/registry.bin --output {output}/output.mov --width {width} --height {height} --max-frames {frames}"
 
 [[impl.bench_cmds]]
 stage = "encode"

@@ -50,8 +50,14 @@ def parse_results():
         for stage in STAGES:
             stage_file = d / f"{stage}.json"
             if stage_file.is_file():
-                with open(stage_file) as f:
-                    hf = json.load(f)
+                try:
+                    with open(stage_file) as f:
+                        content = f.read().strip()
+                    if not content:
+                        continue
+                    hf = json.loads(content)
+                except (json.JSONDecodeError, IOError):
+                    continue
                 results = hf.get("results", [])
                 if results:
                     r = results[0]
@@ -296,6 +302,38 @@ def build_stage_charts(entries):
     if not charts:
         return ""
     return "### Performance Distribution by Stage\n\n" + "\n\n".join(charts) + "\n"
+
+
+def build_comparative_chart(entries):
+    """Build a single comparative chart showing full-pipeline (encode) times."""
+    latest = latest_per_combo(entries)
+    if not latest:
+        return ""
+
+    labels = []
+    data = []
+    for e in latest:
+        if "encode" in e["stages"] and e["stages"]["encode"].get("times"):
+            labels.append(f"{e['lang']}/{e['label']}")
+            data.append(e["stages"]["encode"]["times"])
+
+    if not labels:
+        return ""
+
+    series = [("Full pipeline (encode)", data)]
+    svg = svg_box_chart(
+        "Comparative Performance — Full Pipeline (encode)",
+        labels,
+        series,
+        width=600,
+        height=320,
+    )
+    if svg:
+        ref = save_svg(svg, Path("comparative.svg"))
+        return "### Comparative Performance\n\n" \
+               "Total end-to-end time (arrange + render) for each implementation. " \
+               "Lower is better.\n\n" + ref + "\n"
+    return ""
 
 
 def build_impl_charts(entries):
@@ -559,10 +597,13 @@ def main():
 
     latest_table = build_latest_table(entries)
     history_table = build_history_table(entries)
+    comparative_chart = build_comparative_chart(entries)
     stage_charts = build_stage_charts(entries)
     impl_charts = build_impl_charts(entries)
 
     parts = [latest_table]
+    if comparative_chart:
+        parts.append(comparative_chart)
     if stage_charts:
         parts.append(stage_charts)
     if impl_charts:

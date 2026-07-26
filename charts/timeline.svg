@@ -30,9 +30,9 @@
 <text x="580.0" y="248" text-anchor="middle" font-size="10" fill="#475569">#8</text>
 <line x1="580.0" y1="35" x2="580.0" y2="230" stroke="#f1f5f9" stroke-width="1"/>
 <circle cx="65.0" cy="227.83419578974997" r="4" fill="#2563eb" stroke="white" stroke-width="1.5"/>
-<line x1="138.57142857142856" y1="229.01151729869042" x2="432.8571428571429" y2="228.70695526515377" stroke="#dc2626" stroke-width="2"/>
+<line x1="138.57142857142856" y1="229.01151729869042" x2="432.8571428571429" y2="228.95880207530303" stroke="#dc2626" stroke-width="2"/>
 <circle cx="138.57142857142856" cy="229.01151729869042" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
-<circle cx="432.8571428571429" cy="228.70695526515377" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="432.8571428571429" cy="228.95880207530303" r="4" fill="#dc2626" stroke="white" stroke-width="1.5"/>
 <circle cx="212.14285714285714" cy="209.53702388880652" r="4" fill="#16a34a" stroke="white" stroke-width="1.5"/>
 <circle cx="285.71428571428567" cy="216.77977348503555" r="4" fill="#9333ea" stroke="white" stroke-width="1.5"/>
 <circle cx="359.2857142857143" cy="60.43478260869563" r="4" fill="#ea580c" stroke="white" stroke-width="1.5"/>

@@ -33,19 +33,11 @@ description = "Build Zig dev (BadZiggle)"
 run = "bash scripts/build_impl.sh zig dev"
 
 [tasks.bench]
-description = "Run full benchmark suite (build + benchmark all impls × stages)"
+description = "Run full benchmark suite (build + benchmark all impls, full pipeline encode)"
 run = "bash scripts/run_all.sh"
 
-[tasks.bench-arrange]
-description = "Benchmark arrange stage for all implementations"
-run = "bash scripts/run_all.sh arrange"
-
-[tasks.bench-render]
-description = "Benchmark render stage for all implementations"
-run = "bash scripts/run_all.sh render"
-
 [tasks.bench-encode]
-description = "Benchmark encode stage for all implementations"
+description = "Benchmark full pipeline (arrange + render) for all implementations"
 run = "bash scripts/run_all.sh encode"
 
 [tasks.gen-readme]
