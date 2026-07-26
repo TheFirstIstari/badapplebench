@@ -4,5 +4,7 @@
   "stage": "arrange",
   "date": "2026-07-26",
   "hostname": "Finns-MacBook-Pro.local",
-  "git_commit": "2c68846"
+  "git_commit": "2c68846",
+  "notes": "8 swarm optimizations applied (mem.set for solid fill, pre-allocated gray scratch, shared coarse_average, mem.zero_slice, single-plane FFmpeg, frame buffer pool, countdown counter, separate-channel procs). Pre-existing: 0 tiles found (FFmpeg offset compatibility bug). Time 0.176s for 200 frames but finds 0 matching tiles.",
+  "status": "buggy"
 }

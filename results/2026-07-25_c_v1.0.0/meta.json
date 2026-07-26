@@ -4,5 +4,7 @@
   "stage": "arrange",
   "date": "2026-07-25",
   "hostname": "Finns-MacBook-Pro.local",
-  "git_commit": "157ae38"
+  "git_commit": "157ae38",
+  "notes": "Unified binary with OpenMP parallel blitting + pthreads encode pipeline.",
+  "status": "baseline"
 }

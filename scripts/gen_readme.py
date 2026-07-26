@@ -67,6 +67,8 @@ def parse_results():
             "date": date,
             "git_commit": git_commit,
             "stages": stage_data,
+            "notes": meta.get("notes", ""),
+            "status": meta.get("status", ""),
         })
 
     return entries
@@ -450,6 +452,27 @@ def build_timeline_chart(entries):
     return ref + "\n"
 
 
+def fmt_notes(notes, max_len=60):
+    """Truncate notes to max_len with ellipsis."""
+    if not notes:
+        return "—"
+    if len(notes) > max_len:
+        return notes[:max_len - 1] + "…"
+    return notes
+
+
+def fmt_status(status):
+    """Format status with indicator."""
+    if not status:
+        return "—"
+    indicators = {
+        "baseline": "✓ baseline",
+        "buggy": "**⚠️ buggy**",
+        "pre-optimization": "🚧 pre-opt",
+    }
+    return indicators.get(status, status)
+
+
 def build_latest_table(entries):
     """Build the latest benchmarks markdown table."""
     if not entries:
@@ -467,13 +490,16 @@ def build_latest_table(entries):
 
     lines = []
     lines.append(f"### Latest Benchmarks ({max_date})\n")
-    lines.append("| Language | Version | Arrange (s) | Render (s) | Encode (s) | Git Commit |")
-    lines.append("|----------|---------|-------------|------------|------------|------------|")
+    lines.append("| Language | Version | Arrange (s) | Render (s) | Encode (s) | Status | Notes | Git Commit |")
+    lines.append("|----------|---------|-------------|------------|------------|--------|-------|------------|")
 
     for e in latest:
         vals = {}
         for stage in STAGES:
             vals[stage] = bold_if_fastest(fmt_time(e["stages"], stage), fastest, stage)
+
+        notes = fmt_notes(e.get("notes", ""))
+        status = fmt_status(e.get("status", ""))
 
         line = (
             f"| {e['lang']} "
@@ -481,6 +507,8 @@ def build_latest_table(entries):
             f"| {vals['arrange']} "
             f"| {vals['render']} "
             f"| {vals['encode']} "
+            f"| {status} "
+            f"| {notes} "
             f"| {e['git_commit']} |"
         )
         lines.append(line)
@@ -497,17 +525,19 @@ def build_history_table(entries):
 
     lines = []
     lines.append("### History\n")
-    lines.append("| Date       | Language | Version | Arrange (s) | Render (s) | Encode (s) |")
-    lines.append("|------------|----------|---------|-------------|------------|------------|")
+    lines.append("| Date       | Language | Version | Arrange (s) | Render (s) | Encode (s) | Notes |")
+    lines.append("|------------|----------|---------|-------------|------------|------------|-------|")
 
     for e in sorted_entries:
+        notes = fmt_notes(e.get("notes", ""), max_len=50)
         line = (
             f"| {e['date']} "
             f"| {e['lang']} "
             f"| {e['label']} "
             f"| {fmt_time_plain(e['stages'], 'arrange')} "
             f"| {fmt_time_plain(e['stages'], 'render')} "
-            f"| {fmt_time_plain(e['stages'], 'encode')} |"
+            f"| {fmt_time_plain(e['stages'], 'encode')} "
+            f"| {notes} |"
         )
         lines.append(line)
 

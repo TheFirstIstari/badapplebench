@@ -4,5 +4,7 @@
   "stage": "arrange",
   "date": "2026-07-25",
   "hostname": "Finns-MacBook-Pro.local",
-  "git_commit": "af01720"
+  "git_commit": "af01720",
+  "notes": "Standalone arrange binary (pre-unified). Separate build target.",
+  "status": "baseline"
 }

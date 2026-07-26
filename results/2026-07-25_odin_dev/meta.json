@@ -4,5 +4,7 @@
   "stage": "arrange",
   "date": "2026-07-25",
   "hostname": "Finns-MacBook-Pro.local",
-  "git_commit": "2c68846"
+  "git_commit": "2c68846",
+  "notes": "Single-threaded render, software ProRes (prores_ks). Pre-optimization baseline.",
+  "status": "baseline"
 }

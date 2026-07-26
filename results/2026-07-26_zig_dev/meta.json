@@ -4,5 +4,7 @@
   "stage": "arrange",
   "date": "2026-07-26",
   "hostname": "Finns-MacBook-Pro.local",
-  "git_commit": "ba6fa35"
+  "git_commit": "ba6fa35",
+  "notes": "5 critical bug fixes (Y bounds, EOF-as-error, PTS order, FPS hardcoded, TopKEntry compile error) + 7 swarm optimizations. Pre-optimization baseline: 107s. C baseline full pipeline: 2.1s.",
+  "status": "pre-optimization"
 }

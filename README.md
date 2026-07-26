@@ -67,14 +67,14 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 <!-- BENCHMARKS_START -->
 ### Latest Benchmarks (2026-07-26)
 
-| Language | Version | Arrange (s) | Render (s) | Encode (s) | Git Commit |
-|----------|---------|-------------|------------|------------|------------|
-| c | v0.2.0 | 3.52 ± 0.02 | — | — | af01720 |
-| c | v1.0.0 | 2.10 ± 0.07 | — | 2.10 ± 0.09 | 157ae38 |
-| c | v1.0.0-8k | — | — | 33.28 ± 0.76 | 157ae38 |
-| odin | dev | **0.17 ± 0.01** | **0.02 ± 0.00** | — | 2c68846 |
-| odin | dev-8k | — | — | 275.75 ± 1.47 | 8da1a95 |
-| zig | dev | — | — | **0.03 ± 0.00** | ba6fa35 |
+| Language | Version | Arrange (s) | Render (s) | Encode (s) | Status | Notes | Git Commit |
+|----------|---------|-------------|------------|------------|--------|-------|------------|
+| c | v0.2.0 | 3.52 ± 0.02 | — | — | ✓ baseline | Standalone arrange binary (pre-unified). Separate build tar… | af01720 |
+| c | v1.0.0 | 2.10 ± 0.07 | — | 2.10 ± 0.09 | ✓ baseline | Unified binary with OpenMP parallel blitting + pthreads enc… | 157ae38 |
+| c | v1.0.0-8k | — | — | 33.28 ± 0.76 | — | 8K baseline with --no-hw. OpenMP parallel blitting + pthrea… | 157ae38 |
+| odin | dev | **0.17 ± 0.01** | **0.02 ± 0.00** | — | **⚠️ buggy** | 8 swarm optimizations applied (mem.set for solid fill, pre-… | 2c68846 |
+| odin | dev-8k | — | — | 275.75 ± 1.47 | — | Single-threaded render, software ProRes (prores_ks). 8K bas… | 8da1a95 |
+| zig | dev | — | — | **0.03 ± 0.00** | 🚧 pre-opt | 5 critical bug fixes (Y bounds, EOF-as-error, PTS order, FP… | ba6fa35 |
 
 ### Performance Distribution by Stage
 
@@ -102,16 +102,16 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 
 ### History
 
-| Date       | Language | Version | Arrange (s) | Render (s) | Encode (s) |
-|------------|----------|---------|-------------|------------|------------|
-| 2026-07-25 | c | v0.2.0 | 3.52 | — | — |
-| 2026-07-25 | c | v1.0.0 | 1.60 | — | 1.61 |
-| 2026-07-25 | c | v1.0.0-8k | — | — | 33.28 |
-| 2026-07-25 | odin | dev | 1.23 | 15.81 | 21.50 |
-| 2026-07-25 | odin | dev-8k | — | — | 275.75 |
-| 2026-07-26 | c | v1.0.0 | 2.10 | — | 2.10 |
-| 2026-07-26 | odin | dev | 0.17 | 0.02 | — |
-| 2026-07-26 | zig | dev | — | — | 0.03 |
+| Date       | Language | Version | Arrange (s) | Render (s) | Encode (s) | Notes |
+|------------|----------|---------|-------------|------------|------------|-------|
+| 2026-07-25 | c | v0.2.0 | 3.52 | — | — | Standalone arrange binary (pre-unified). Separate… |
+| 2026-07-25 | c | v1.0.0 | 1.60 | — | 1.61 | Unified binary with OpenMP parallel blitting + pt… |
+| 2026-07-25 | c | v1.0.0-8k | — | — | 33.28 | 8K baseline with --no-hw. OpenMP parallel blittin… |
+| 2026-07-25 | odin | dev | 1.23 | 15.81 | 21.50 | Single-threaded render, software ProRes (prores_k… |
+| 2026-07-25 | odin | dev-8k | — | — | 275.75 | Single-threaded render, software ProRes (prores_k… |
+| 2026-07-26 | c | v1.0.0 | 2.10 | — | 2.10 | Unified binary with OpenMP parallel blitting + pt… |
+| 2026-07-26 | odin | dev | 0.17 | 0.02 | — | 8 swarm optimizations applied (mem.set for solid … |
+| 2026-07-26 | zig | dev | — | — | 0.03 | 5 critical bug fixes (Y bounds, EOF-as-error, PTS… |
 <!-- BENCHMARKS_END -->
 
 ## Project Structure
