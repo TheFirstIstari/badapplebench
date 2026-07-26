@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "command": "/Users/frobinson/dev/badapplebench/repos/BadOdinStein/badodin render --manifests /tmp/odin_hyper --registry /Users/frobinson/dev/badapplebench/test_lib/registry.bin --output /tmp/odin_hyper/out.mov --width 7680 --height 4320 --max-frames 200",
+      "mean": 0.016354592680000002,
+      "stddev": 0.0005636455155742831,
+      "median": 0.016354439680000003,
+      "user": 0.012590846666666664,
+      "system": 0.002994166666666667,
+      "min": 0.015791023680000002,
+      "max": 0.01691831468,
+      "times": [
+        0.015791023680000002,
+        0.016354439680000003,
+        0.01691831468
+      ],
+      "memory_usage_byte": [
+        8323072,
+        8323072,
+        8323072
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}
