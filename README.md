@@ -72,13 +72,15 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 | c | v0.2.0 | 3.52 ± 0.02 | — | — | af01720 |
 | c | v1.0.0 | 2.10 ± 0.07 | — | 2.10 ± 0.09 | 157ae38 |
 | c | v1.0.0-8k | — | — | 33.28 ± 0.76 | 157ae38 |
-| odin | dev | **0.17 ± 0.01** | — | — | 2c68846 |
+| odin | dev | **0.17 ± 0.01** | **0.02 ± 0.00** | — | 2c68846 |
 | odin | dev-8k | — | — | 275.75 ± 1.47 | 8da1a95 |
 | zig | dev | — | — | **0.03 ± 0.00** | ba6fa35 |
 
 ### Performance Distribution by Stage
 
 ![stage_arrange](charts/stage_arrange.svg)
+
+![stage_render](charts/stage_render.svg)
 
 ![stage_encode](charts/stage_encode.svg)
 
@@ -108,7 +110,7 @@ Results are stored as hyperfine JSON in `results/` (git-tracked) for historical 
 | 2026-07-25 | odin | dev | 1.23 | 15.81 | 21.50 |
 | 2026-07-25 | odin | dev-8k | — | — | 275.75 |
 | 2026-07-26 | c | v1.0.0 | 2.10 | — | 2.10 |
-| 2026-07-26 | odin | dev | 0.17 | — | — |
+| 2026-07-26 | odin | dev | 0.17 | 0.02 | — |
 | 2026-07-26 | zig | dev | — | — | 0.03 |
 <!-- BENCHMARKS_END -->
 
