@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "command": "/Users/frobinson/dev/badapplebench/repos/BadOdinStein/badodin arrange --video /Users/frobinson/dev/badapplebench/badapple.mp4 --features /Users/frobinson/dev/badapplebench/test_lib/features.bin --registry /Users/frobinson/dev/badapplebench/test_lib/registry.bin --max-frames 500 --quiet",
+      "mean": 11.33816824006,
+      "stddev": 0.1428108729523442,
+      "median": 11.39501613566,
+      "user": 22.42862088,
+      "system": 1.25169356,
+      "min": 11.08561207366,
+      "max": 11.55895694766,
+      "times": [
+        11.08561207366,
+        11.185196490660001,
+        11.223871197660001,
+        11.26495665666,
+        11.390837406660001,
+        11.423881531660001,
+        11.43901774066,
+        11.39919486466,
+        11.410157490660001,
+        11.55895694766
+      ],
+      "memory_usage_byte": [
+        704659456,
+        704741376,
+        704741376,
+        704741376,
+        705150976,
+        705150976,
+        705150976,
+        705150976,
+        705150976,
+        705167360
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

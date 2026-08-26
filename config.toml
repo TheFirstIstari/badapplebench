@@ -1,37 +1,34 @@
 # badapplebench configuration
-# Only the encode stage (full pipeline: arrange + render) is benchmarked.
-# This measures the total time to compute the output video.
+# Benchmark stages: arrange, render, encode (full pipeline)
 
 [bench]
 warmup = 1
 runs = 10
 test_pages = 2000
-test_frames = 200
+test_frames = 500
 test_video = "badapple.mp4"
 
 [bench.render]
 width = 7680
 height = 4320
 
-# ── C v1.0.0 (unified binary) ──
+# ── C v1.1.0 (unified binary) ──
+# C implementation uses a single `encode` command — no separate arrange/render subcommands.
 
 [[impl]]
 lang = "c"
-label = "v1.0.0"
+label = "v1.1.0"
 git_url = "https://github.com/TheFirstIstari/BadApplestein.git"
-git_ref = "v1.0.0"
+git_ref = "master"
 repo_dir = "BadApplestein"
 build_cmd = "make -j"
 binary_path = "src/badapplestein"
 
 [[impl.bench_cmds]]
 stage = "encode"
-cmd = "{binary} encode {video} {output} --library {lib} --max-frames {frames} --no-hw --quiet"
+cmd = "{binary} encode {video} {output} --library {lib} --max-frames {frames} --width {width} --height {height} --no-hw --quiet"
 
 # ── Odin dev ──
-# NOTE: Odin binary has a pre-existing FFmpeg offset compatibility issue at runtime.
-# CLI parsing was fixed (cli.odin) but FFmpeg pointer arithmetic offsets need
-# recalibration for the installed FFmpeg build. See BADODINSTEIN_AUDIT.md.
 
 [[impl]]
 lang = "odin"
@@ -44,7 +41,16 @@ binary_path = "badodin"
 
 [[impl.bench_cmds]]
 stage = "encode"
-cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames} && {binary} render --manifests manifests_greedy --registry {lib}/registry.bin --output {output}.mov --width {width} --height {height} --max-frames {frames}"
+cmd = "{binary} arrange --quiet --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames} && {binary} render --quiet --manifests manifests_greedy --registry {lib}/registry.bin --output {output}.mov --width {width} --height {height} --max-frames {frames} --no-hw"
+
+[[impl.bench_cmds]]
+stage = "arrange"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames} --quiet"
+
+[[impl.bench_cmds]]
+stage = "render"
+prepare = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --max-frames {frames} --quiet"
+cmd = "{binary} render --manifests manifests_greedy --registry {lib}/registry.bin --output {output}.mov --width {width} --height {height} --max-frames {frames} --no-hw --quiet"
 
 # ── Zig dev (BadZiggle) ──
 
@@ -54,9 +60,18 @@ label = "dev"
 git_url = "https://github.com/TheFirstIstari/BadZiggle.git"
 git_ref = "master"
 repo_dir = "BadZiggle"
-build_cmd = "zig build"
+build_cmd = "zig build -Drelease-fast=true"
 binary_path = "zig-out/bin/badziggle"
 
 [[impl.bench_cmds]]
 stage = "encode"
-cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet && {binary} render --manifests {output} --registry {lib}/registry.bin --output {output}/output.mov --width {width} --height {height} --max-frames {frames}"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet && {binary} render --manifests {output} --registry {lib}/registry.bin --output {output}/output.mov --width {width} --height {height} --max-frames {frames} --no-hw --quiet"
+
+[[impl.bench_cmds]]
+stage = "arrange"
+cmd = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet"
+
+[[impl.bench_cmds]]
+stage = "render"
+prepare = "{binary} arrange --video {video} --features {lib}/features.bin --registry {lib}/registry.bin --manifests {output} --max-frames {frames} --quiet"
+cmd = "{binary} render --manifests {output} --registry {lib}/registry.bin --output {output}/output.mov --width {width} --height {height} --max-frames {frames} --no-hw --quiet"

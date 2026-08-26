@@ -1,0 +1,9 @@
+{
+  "lang": "c",
+  "label": "v1.0.0",
+  "stage": "encode",
+  "date": "2026-07-27",
+  "hostname": "frobinson-mac",
+  "git_commit": "157ae38",
+  "notes": "Reference implementation. -O3 + OpenMP + AVX2/NEON SIMD."
+}

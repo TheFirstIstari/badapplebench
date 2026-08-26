@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "command": "/Users/frobinson/dev/badapplebench/repos/BadApplestein/src/badapplestein encode /Users/frobinson/dev/badapplebench/badapple.mp4 /tmp/badapplebench_output --library /Users/frobinson/dev/badapplebench/test_lib --max-frames 500 --no-hw --quiet",
+      "mean": 4.08294201338,
+      "stddev": 0.3306603580513716,
+      "median": 4.09815020938,
+      "user": 12.707329839999998,
+      "system": 0.7166383599999999,
+      "min": 3.61116433388,
+      "max": 4.47596308388,
+      "times": [
+        3.61116433388,
+        3.6251325848800002,
+        4.40593833388,
+        4.47596308388,
+        4.44982387588,
+        3.97857754288,
+        3.81139050088,
+        4.21772287588,
+        4.287809750879999,
+        3.96589725088
+      ],
+      "memory_usage_byte": [
+        605847552,
+        692666368,
+        692666368,
+        692666368,
+        692666368,
+        692666368,
+        692666368,
+        692666368,
+        692666368,
+        692666368
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}
