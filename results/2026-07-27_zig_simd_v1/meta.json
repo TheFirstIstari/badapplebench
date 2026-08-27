@@ -1,0 +1,9 @@
+{
+  "lang": "zig",
+  "label": "simd_v1",
+  "stage": "encode",
+  "date": "2026-07-27",
+  "hostname": "frobinson-mac",
+  "git_commit": "4885e89",
+  "notes": "SIMD L1 distance (16-byte vectorized). No threading. 3x speedup over scalar baseline."
+}

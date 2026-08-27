@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "command": "/Users/frobinson/dev/badapplebench/repos/BadZiggle/zig-out/bin/badziggle arrange --video /Users/frobinson/dev/badapplebench/badapple.mp4 --features /Users/frobinson/dev/badapplebench/test_lib/features.bin --registry /Users/frobinson/dev/badapplebench/test_lib/registry.bin --manifests /tmp/badapplebench_output --max-frames 500 --quiet",
+      "mean": 6.134370303239999,
+      "stddev": 0.10905720528641909,
+      "median": 6.07715850764,
+      "user": 9.5199599,
+      "system": 0.39130362,
+      "min": 6.03921384014,
+      "max": 6.32610604914,
+      "times": [
+        6.16514642414,
+        6.06027379914,
+        6.32610604914,
+        6.32367484114,
+        6.15864200714,
+        6.07082904914,
+        6.03921384014,
+        6.06591013214,
+        6.05041892414,
+        6.08348796614
+      ],
+      "memory_usage_byte": [
+        179978240,
+        179994624,
+        179994624,
+        179994624,
+        179994624,
+        179994624,
+        179994624,
+        179994624,
+        179994624,
+        179994624
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

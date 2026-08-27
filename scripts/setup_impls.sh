@@ -32,7 +32,12 @@ while IFS='|' read -r GIT_URL GIT_REF REPO_DIR; do
     [ -z "$GIT_URL" ] && continue
     TARGET_DIR="$REPOS_DIR/$REPO_DIR"
 
-    if [ -d "$TARGET_DIR" ]; then
+    if [ -L "$TARGET_DIR" ]; then
+        echo "--- Using local repo: $REPO_DIR (symlink) ---"
+        cd "$TARGET_DIR"
+        git checkout "$GIT_REF" 2>&1 || true
+        cd "$ROOT_DIR"
+    elif [ -d "$TARGET_DIR" ]; then
         echo "--- Updating $REPO_DIR ---"
         cd "$TARGET_DIR"
         git fetch --all --tags 2>&1

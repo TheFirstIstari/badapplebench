@@ -149,7 +149,7 @@ echo "  Running hyperfine ($RUNS runs, warmup=$WARMUP)..."
 
 if ! hyperfine \
     --warmup "$WARMUP" \
-    -n "$RUNS" \
+    --runs "$RUNS" \
     "$RESOLVED_CMD" \
     --export-json "$HYPERFINE_OUTPUT"; then
     echo "ERROR: hyperfine failed for $LANG $LABEL $STAGE" >&2

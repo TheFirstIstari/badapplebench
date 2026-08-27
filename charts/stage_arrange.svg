@@ -4,35 +4,34 @@
 <line x1="60" y1="200.0" x2="500" y2="200.0" stroke="#e2e8f0" stroke-width="1"/>
 <text x="54" y="204.0" text-anchor="end" font-size="10" fill="#64748b">0.0s</text>
 <line x1="60" y1="166.0" x2="500" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">0.8s</text>
+<text x="54" y="170.0" text-anchor="end" font-size="10" fill="#64748b">3.2s</text>
 <line x1="60" y1="132.0" x2="500" y2="132.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">1.6s</text>
+<text x="54" y="136.0" text-anchor="end" font-size="10" fill="#64748b">6.4s</text>
 <line x1="60" y1="98.0" x2="500" y2="98.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="102.0" text-anchor="end" font-size="10" fill="#64748b">2.3s</text>
+<text x="54" y="102.0" text-anchor="end" font-size="10" fill="#64748b">9.7s</text>
 <line x1="60" y1="64.0" x2="500" y2="64.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="68.0" text-anchor="end" font-size="10" fill="#64748b">3.1s</text>
+<text x="54" y="68.0" text-anchor="end" font-size="10" fill="#64748b">12.9s</text>
 <line x1="60" y1="30.0" x2="500" y2="30.0" stroke="#e2e8f0" stroke-width="1"/>
-<text x="54" y="34.0" text-anchor="end" font-size="10" fill="#64748b">3.9s</text>
+<text x="54" y="34.0" text-anchor="end" font-size="10" fill="#64748b">16.1s</text>
 <text x="133.33333333333331" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v0.2.0</text>
-<line x1="133.33333333333331" y1="47.95392399796202" x2="133.33333333333331" y2="47.584575183245846" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="133.33333333333331" y1="45.89494647844438" x2="133.33333333333331" y2="45.45454545454544" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="121.33333333333331" y1="47.95392399796202" x2="145.33333333333331" y2="47.95392399796202" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="121.33333333333331" y1="45.45454545454544" x2="145.33333333333331" y2="45.45454545454544" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="113.33333333333331" y="45.89494647844438" width="40" height="1.6896287048014642" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="113.33333333333331" y1="46.64744360549514" x2="153.33333333333331" y2="46.64744360549514" stroke="#2563eb" stroke-width="2"/>
-<text x="280.0" y="216" text-anchor="middle" font-size="10" fill="#475569">c/v1.0.0</text>
-<line x1="280.0" y1="131.36089135872896" x2="280.0" y2="130.99138115045238" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="280.0" y1="128.57178530249888" x2="280.0" y2="126.62697044066013" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="268.0" y1="131.36089135872896" x2="292.0" y2="131.36089135872896" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="268.0" y1="126.62697044066013" x2="292.0" y2="126.62697044066013" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="260.0" y="128.57178530249888" width="40" height="2.4195958479535022" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="260.0" y1="129.23330995467018" x2="300.0" y2="129.23330995467018" stroke="#2563eb" stroke-width="2"/>
-<text x="426.66666666666663" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev</text>
-<line x1="426.66666666666663" y1="193.60637000545256" x2="426.66666666666663" y2="193.58499885169175" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="426.66666666666663" y1="193.47704410068556" x2="426.66666666666663" y2="193.31511197417623" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="414.66666666666663" y1="193.60637000545256" x2="438.66666666666663" y2="193.60637000545256" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="414.66666666666663" y1="193.31511197417623" x2="438.66666666666663" y2="193.31511197417623" stroke="#2563eb" stroke-width="1.5"/>
-<rect x="406.66666666666663" y="193.47704410068556" width="40" height="0.10795475100619001" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
-<line x1="406.66666666666663" y1="193.51599600992992" x2="446.66666666666663" y2="193.51599600992992" stroke="#2563eb" stroke-width="2"/>
-<circle cx="426.66666666666663" cy="193.15219494651151" r="2.5" fill="#2563eb" fill-opacity="0.6"/>
+<line x1="133.33333333333331" y1="163.08945069444917" x2="133.33333333333331" y2="162.99978795539664" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="133.33333333333331" y1="162.58961542574968" x2="133.33333333333331" y2="162.4827041253448" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="121.33333333333331" y1="163.08945069444917" x2="145.33333333333331" y2="163.08945069444917" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="121.33333333333331" y1="162.4827041253448" x2="145.33333333333331" y2="162.4827041253448" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="113.33333333333331" y="162.58961542574968" width="40" height="0.4101725296469567" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="113.33333333333331" y1="162.7722908557287" x2="153.33333333333331" y2="162.7722908557287" stroke="#2563eb" stroke-width="2"/>
+<text x="280.0" y="216" text-anchor="middle" font-size="10" fill="#475569">odin/dev</text>
+<line x1="280.0" y1="82.866412208949" x2="280.0" y2="81.40552875647391" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="280.0" y1="79.29216524879963" x2="280.0" y2="77.86492171968118" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="268.0" y1="82.866412208949" x2="292.0" y2="82.866412208949" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="268.0" y1="77.86492171968118" x2="292.0" y2="77.86492171968118" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="260.0" y="79.29216524879963" width="40" height="2.113363507674279" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="260.0" y1="79.55301127670492" x2="300.0" y2="79.55301127670492" stroke="#2563eb" stroke-width="2"/>
+<text x="426.66666666666663" y="216" text-anchor="middle" font-size="10" fill="#475569">zig/dev</text>
+<line x1="426.66666666666663" y1="49.33231385950708" x2="426.66666666666663" y2="49.01465870567381" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="426.66666666666663" y1="46.0247653103676" x2="426.66666666666663" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="414.66666666666663" y1="49.33231385950708" x2="438.66666666666663" y2="49.33231385950708" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="414.66666666666663" y1="45.45454545454547" x2="438.66666666666663" y2="45.45454545454547" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="406.66666666666663" y="46.0247653103676" width="40" height="2.9898933953062112" fill="#2563eb" fill-opacity="0.25" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="406.66666666666663" y1="47.6759305875747" x2="446.66666666666663" y2="47.6759305875747" stroke="#2563eb" stroke-width="2"/>
 </svg>

@@ -65,16 +65,18 @@ That's it. The benchmark infrastructure handles cloning, building, testing, and 
 Results are stored as hyperfine JSON in `results/` (git-tracked) for historical comparison. The README is auto-generated from these results.
 
 <!-- BENCHMARKS_START -->
-### Latest Benchmarks (2026-07-26)
+### Latest Benchmarks (2026-08-26)
 
 | Language | Version | Arrange (s) | Render (s) | Encode (s) | Status | Notes | Git Commit |
 |----------|---------|-------------|------------|------------|--------|-------|------------|
-| c | v0.2.0 | 3.52 ± 0.02 | — | — | ✓ baseline | Standalone arrange binary (pre-unified). Separate build tar… | af01720 |
-| c | v1.0.0 | 1.62 ± 0.03 | — | 1.69 ± 0.07 | ✓ baseline | Unified binary with OpenMP parallel blitting + pthreads enc… | 157ae38 |
+| c | v0.2.0 | **3.52 ± 0.02** | — | — | ✓ baseline | Standalone arrange binary (pre-unified). Separate build tar… | af01720 |
+| c | v1.0.0 | — | — | **2.04 ± 0.04** | — | — | 157ae38 |
 | c | v1.0.0-8k | — | — | 33.28 ± 0.76 | — | 8K baseline with --no-hw. OpenMP parallel blitting + pthrea… | 157ae38 |
-| odin | dev | **0.15 ± 0.00** | **0.02 ± 0.00** | — | **⚠️ buggy** | 8 swarm optimizations applied (mem.set for solid fill, pre-… | 2c68846 |
+| c | v1.1.0 | — | — | 4.08 ± 0.33 | — | — | c195010 |
+| odin | dev | 11.34 ± 0.14 | — | — | — | — | 4e5b911 |
 | odin | dev-8k | — | — | 275.75 ± 1.47 | — | Single-threaded render, software ProRes (prores_ks). 8K bas… | 8da1a95 |
-| zig | dev | — | — | **0.03 ± 0.00** | 🚧 pre-opt | 5 critical bug fixes (Y bounds, EOF-as-error, PTS order, FP… | ba6fa35 |
+| zig | dev | 14.41 ± 0.15 | — | — | — | — | 0e68fe0 |
+| zig | simd_v1 | — | — | 3.22 ± 0.01 | — | SIMD L1 distance (16-byte vectorized). No threading. 3x spe… | 4885e89 |
 
 ### Comparative Performance
 
@@ -86,8 +88,6 @@ Total end-to-end time (arrange + render) for each implementation. Lower is bette
 
 ![stage_arrange](charts/stage_arrange.svg)
 
-![stage_render](charts/stage_render.svg)
-
 ![stage_encode](charts/stage_encode.svg)
 
 ### Performance Distribution by Implementation
@@ -98,11 +98,15 @@ Total end-to-end time (arrange + render) for each implementation. Lower is bette
 
 ![impl_c_v1.0.0-8k](charts/impl_c_v1.0.0-8k.svg)
 
+![impl_c_v1.1.0](charts/impl_c_v1.1.0.svg)
+
 ![impl_odin_dev](charts/impl_odin_dev.svg)
 
 ![impl_odin_dev-8k](charts/impl_odin_dev-8k.svg)
 
 ![impl_zig_dev](charts/impl_zig_dev.svg)
+
+![impl_zig_simd_v1](charts/impl_zig_simd_v1.svg)
 
 ![timeline](charts/timeline.svg)
 
@@ -118,6 +122,16 @@ Total end-to-end time (arrange + render) for each implementation. Lower is bette
 | 2026-07-26 | c | v1.0.0 | 1.62 | — | 1.69 | Unified binary with OpenMP parallel blitting + pt… |
 | 2026-07-26 | odin | dev | 0.15 | 0.02 | — | 8 swarm optimizations applied (mem.set for solid … |
 | 2026-07-26 | zig | dev | — | — | 0.03 | 5 critical bug fixes (Y bounds, EOF-as-error, PTS… |
+| 2026-07-27 | c | v1.0.0 | — | — | 1.70 | Reference implementation. -O3 + OpenMP + AVX2/NEO… |
+| 2026-07-27 | zig | simd_v1 | — | — | 3.22 | SIMD L1 distance (16-byte vectorized). No threadi… |
+| 2026-07-29 | c | v1.0.0 | — | — | 2.04 | — |
+| 2026-07-30 | c | v1.1.0 | — | — | 4.08 | — |
+| 2026-07-30 | odin | dev | 3.32 | — | — | — |
+| 2026-07-30 | zig | dev | 6.44 | — | — | — |
+| 2026-07-31 | odin | dev | 3.77 | — | — | — |
+| 2026-07-31 | zig | dev | 6.13 | — | — | — |
+| 2026-08-26 | odin | dev | 11.34 | — | — | — |
+| 2026-08-26 | zig | dev | 14.41 | — | — | — |
 <!-- BENCHMARKS_END -->
 
 ## Project Structure
